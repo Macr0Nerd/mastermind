@@ -55,13 +55,20 @@ int mastermind::failTest() {
 string mastermind::guessCheck(std::string ans) {
     string check, guessed;
 
+    string test = key;
+
     for (int i = 0; i < 4; ++i) {
         if(ans[i] == key[i]){
             check += "R";
-        } else if (key.find(ans[i]) != string::npos) {
-            check += "I";
-            guessed += ans[i];
+            test.erase(i);
         }
+    }
+
+    for (int j = 0; j < 4; ++j) {
+       if (test.find(ans[j]) != string::npos){
+           check += "I";
+           guessed += ans[j];
+       }
     }
 
     return check;
