@@ -95,6 +95,7 @@ void mastermind::playGame() {
         getline(cin, ans);
 
         transform(ans.begin(), ans.end(), ans.begin(), ::toupper);
+        ans.erase(remove_if(ans.begin(), ans.end(), ::isspace), ans.end());
 
         play = guess(ans);
     }
