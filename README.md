@@ -6,16 +6,21 @@ Maybe I'll add the color support if i decide to not be lazy.
 
 ## How to Run
 ### Windows
-1. Download [Visual Studio Code](https://code.visualstudio.com/) and 
-install it.
-2. Install the C++ packages and set it up idk i use CLion
-3. Compile main.cpp
-4. Build and run project
+1. Install g++
+2. Navigate to the directory the files are in
+3. Run `g++ -c main.cpp`
+4. Confirm that the "main.o" file has been made
+5. Run `g++ -o game main.o mastermind.cpp`
+6. You can now play the game with `./game`
 ### Mac Os
 1. Follow [this](https://clang.llvm.org/get_started.html)
 ### Linux
 1. Install g++
-2. Follow [this](https://www.cs.fsu.edu/~myers/howto/g++compiling.txt)
+2. Navigate to the directory the files are in
+3. Run `g++ -c main.cpp`
+4. Confirm that the "main.o" file has been made
+5. Run `g++ -o game main.o mastermind.cpp`
+6. You can now play the game with `./game`
 
 ## How to Play
 Type in a guess by choosing from
@@ -33,6 +38,6 @@ A dialogue box will show up. It will show your guess. To the right it
 will either be empty or show a combination of `R` and `I`. An `R` 
 signifies you have a letter in the correct place, but it doesn't say 
 which one. An `I` means one of the letters is right but not in the 
-correct spot.
+correct spot. `#` is simply filler for if there were no matches.
 
 Have fun.
