@@ -17,6 +17,8 @@
 #define CYAN "\033[0;36m"
 #define WHITE "\033[0;37m"
 #define RESET "\033[0;0m"
+
+#define BOLD "\033[0;1m"
 using namespace std;
 
 int mastermind::code() {
@@ -35,6 +37,17 @@ int mastermind::code() {
 void mastermind::startGame() {
     code();
     guesses = 0;
+
+    cout << CYAN << "-------------" << endl;
+    cout << "|" <<  BOLD << YELLOW << "How to Play" << CYAN << "|" << endl;
+    cout << "-------------" << RESET << endl;
+    cout << "-> Type in a sequence of characters choosing from R, G, B, Y, C, M" << endl;
+    cout << "-> An output box will appear. Next to your guess you will see a combination of R, I and #" << endl;
+    cout << MAGENTA << "-> An R means a character (not specified) is in the right spot" << endl;
+    cout << "-> An I means there is a character that is in the key but in the wrong spot" << endl;
+    cout << "-> A # is simply filler" << RESET << endl;
+    cout << "-> Your goal is to find the key with the information provided" << endl;
+    cout << BLUE << "\nHave Fun!" << RESET << endl;
 }
 
 int mastermind::goalTest(string ans) {

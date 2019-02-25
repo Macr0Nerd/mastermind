@@ -34,7 +34,7 @@ Type in a guess by choosing from
 in a manner similar to `RGBC`. Yes, you can use lowercase or spaces but
 for gods sake putting in `R gb C` runs fine but looks like ass god damn.
 
-A dialogue box will show up. It will show your guess. To the right it 
+An output box will show up. It will show your guess. To the right it 
 will either be empty or show a combination of `R` and `I`. An `R` 
 signifies you have a letter in the correct place, but it doesn't say 
 which one. An `I` means one of the letters is right but not in the 
