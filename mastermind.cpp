@@ -75,6 +75,12 @@ string mastermind::guessCheck(std::string ans) {
        }
     }
 
+    long len = 4 - check.length();
+
+    for (int k = 0; k < len; ++k) {
+        check += "#";
+    }
+
     return check;
 }
 
