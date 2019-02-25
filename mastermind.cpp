@@ -60,14 +60,16 @@ string mastermind::guessCheck(std::string ans) {
     for (int i = 0; i < 4; ++i) {
         if(ans[i] == key[i]){
             check += "R";
-            test.erase(i);
+            test[i] = '0';
         }
     }
 
     for (int j = 0; j < 4; ++j) {
        if (test.find(ans[j]) != string::npos){
-           check += "I";
-           guessed += ans[j];
+           if (!guessed.find(ans[j])) {
+               check += "I";
+               guessed += ans[j];
+           }
        }
     }
 
@@ -84,9 +86,9 @@ int mastermind::guess(std::string ans) {
     } else {
         ++guesses;
 
-        cout << "---------------------------" << endl;
+        cout << "----------------------------" << endl;
         cout << "| " << ans[0] << " - " << ans[1] << " - " << ans[2] << " - " << ans[3] << " | " << guessCheck(ans) << " | " << guesses << " |" << endl;
-        cout << "---------------------------" << endl;
+        cout << "----------------------------" << endl;
 
         return 0;
     }
