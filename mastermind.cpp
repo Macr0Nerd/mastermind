@@ -66,10 +66,10 @@ string mastermind::guessCheck(std::string ans) {
 
     for (int j = 0; j < 4; ++j) {
        if (test.find(ans[j]) != string::npos){
-           if (!guessed.find(ans[j])) {
-               check += "I";
-               guessed += ans[j];
-           }
+           size_t index = test.find(ans[j]);
+
+           check += "I";
+           test[index] = '0';
        }
     }
 
