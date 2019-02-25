@@ -12,7 +12,7 @@ public:
     void startGame();
     void playGame();
 protected:
-    std::string key = "RGBM";
+    std::string key = "CCCY";
     int guesses = 0;
 private:
     int guess(std::string ans);

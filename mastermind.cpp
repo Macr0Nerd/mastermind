@@ -16,6 +16,7 @@
 #define MAGENTA "\033[0;35m"
 #define CYAN "\033[0;36m"
 #define WHITE "\033[0;37m"
+#define RESET "\033[0;0m"
 using namespace std;
 
 int mastermind::code() {
@@ -53,7 +54,7 @@ int mastermind::failTest() {
 }
 
 string mastermind::guessCheck(std::string ans) {
-    string check, guessed;
+    string check;
 
     string test = key;
 
@@ -61,6 +62,7 @@ string mastermind::guessCheck(std::string ans) {
         if(ans[i] == key[i]){
             check += "R";
             test[i] = '0';
+            ans[i] = '1';
         }
     }
 
