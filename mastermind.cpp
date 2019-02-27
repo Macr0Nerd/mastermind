@@ -19,15 +19,17 @@
 #define RESET "\033[0;0m"
 
 #define BOLD "\033[0;1m"
-using namespace std;
+using std::cout;
+using std::cin;
+using std::endl;
 
 int mastermind::code() {
     key = "";
 
-    string col[6] = {"R", "M", "Y", "G", "B", "C"};
+    std::string col[6] = {"R", "M", "Y", "G", "B", "C"};
 
     for (int i = 0; i < 4; ++i) {
-        int rando = experimental::randint(0, 6);
+        int rando = std::experimental::randint(0, 6);
         key += col[rando];
     }
 
@@ -41,7 +43,7 @@ void mastermind::startGame() {
     cout << CYAN << "-------------" << endl;
     cout << "|" <<  BOLD << YELLOW << "How to Play" << CYAN << "|" << endl;
     cout << "-------------" << RESET << endl;
-    cout << "-> Type in a sequence of characters choosing from R, G, B, Y, C, M" << endl;
+    cout << "-> Type in a sequence of four characters choosing from R, G, B, Y, C, M" << endl;
     cout << "-> An output box will appear. Next to your guess you will see a combination of R, I and #" << endl;
     cout << MAGENTA << "-> An R means a character (not specified) is in the right spot" << endl;
     cout << "-> An I means there is a character that is in the key but in the wrong spot" << endl;
@@ -50,7 +52,7 @@ void mastermind::startGame() {
     cout << BLUE << "\nHave Fun!" << RESET << endl;
 }
 
-int mastermind::goalTest(string ans) {
+int mastermind::goalTest(std::string ans) {
     if(ans == key){
         return 1;
     } else {
@@ -66,10 +68,10 @@ int mastermind::failTest() {
     }
 }
 
-string mastermind::guessCheck(std::string ans) {
-    string check;
+std::string mastermind::guessCheck(std::string ans) {
+    std::string check;
 
-    string test = key;
+    std::string test = key;
 
     for (int i = 0; i < 4; ++i) {
         if(ans[i] == key[i]){
@@ -80,7 +82,7 @@ string mastermind::guessCheck(std::string ans) {
     }
 
     for (int j = 0; j < 4; ++j) {
-       if (test.find(ans[j]) != string::npos){
+       if (test.find(ans[j]) != std::string::npos){
            size_t index = test.find(ans[j]);
 
            check += "I";
@@ -121,7 +123,7 @@ void mastermind::playGame() {
     while(!play) {
 
         cout << "Enter your guess: ";
-        string ans;
+        std::string ans;
         getline(cin, ans);
 
         transform(ans.begin(), ans.end(), ans.begin(), ::toupper);
